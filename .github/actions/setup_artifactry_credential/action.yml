@@ -1,0 +1,21 @@
+name: 'Setup Artifactry Credential'
+description: 'Setup Artifactry server'
+inputs:
+  user_id:
+    description: 'Artifactry User ID'
+    required: true
+    default: '*****@**.**'
+  user_password:
+    description: 'Artifactry User Password'
+    required: true
+    default: '******'
+    
+runs:
+  using: 'composite'
+  steps:
+    - name: Download JFrog CLI
+      uses: jfrog/setup-jfrog-cli@v4
+
+    - name: Configure JFrog CLI
+      run: |
+        jf config add default --artifactory-url=https://art.geniie.net/artifactory/ --url=https://art.geniie.net/ --user=${{ inputs.user_id }} --password=${{ inputs.user_password }} --interactive=false --overwrite=true
