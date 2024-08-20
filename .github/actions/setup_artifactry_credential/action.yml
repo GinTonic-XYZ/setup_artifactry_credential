@@ -16,6 +16,6 @@ runs:
     - name: Download JFrog CLI
       uses: jfrog/setup-jfrog-cli@v4
 
-    - name: Configure JFrog CLI
-      run: |
-        jf config add default --artifactory-url=https://art.geniie.net/artifactory/ --url=https://art.geniie.net/ --user=${{ inputs.user_id }} --password=${{ inputs.user_password }} --interactive=false --overwrite=true
+    #- name: Configure JFrog CLI
+    #  run: |
+    #    jf config add default --artifactory-url=https://art.geniie.net/artifactory/ --url=https://art.geniie.net/ --user=${{ inputs.user_id }} --password=${{ inputs.user_password }} --interactive=false --overwrite=true
